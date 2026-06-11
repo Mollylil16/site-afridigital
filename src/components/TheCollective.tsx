@@ -32,7 +32,7 @@ export default function TheCollective() {
       role: "Marketing & Designer UI/UX",
     },
     {
-      name: "Koné Bouba",
+      name: "Koné Aboubakar Sidiq",
       role: "Stratège Marketing",
     },
     {
