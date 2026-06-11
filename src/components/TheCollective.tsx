@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { User } from "lucide-react";
 
 // Inline LinkedIn SVG Icon for bulletproof SSR/CSR rendering
 const LinkedInIcon = () => (
@@ -21,28 +21,27 @@ export default function TheCollective() {
     {
       name: "Omepieu Brunell",
       role: "Fondateur & CEO",
-      image: "/images/omepieu_brunell.png",
       linkedin: "https://www.linkedin.com/in/brunell-christ-axel",
     },
     {
       name: "Zouegna Blaise",
       role: "Dév Principal & Apporteur d'affaires",
-      image: "/images/zouegna_blaise.png",
     },
     {
       name: "Ohoucou K. Jean Noel",
       role: "Marketing & Designer UI/UX",
-      image: "/images/ohoucou_jean_noel.png",
     },
     {
       name: "Koné Bouba",
       role: "Stratège Marketing",
-      image: "/images/kone_bouba.png",
     },
     {
       name: "Djabia K. Vincent",
       role: "Développeur Full Stack",
-      image: "/images/djabia_vincent.png",
+    },
+    {
+      name: "Melvyn Tondoh",
+      role: "Marketeur de profession",
     },
   ];
 
@@ -72,11 +71,11 @@ export default function TheCollective() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-display font-bold text-4xl md:text-5xl text-white tracking-tight uppercase mb-16"
         >
-          Architectes du Code
+          Architectes du Code & Partenaires
         </motion.h2>
 
-        {/* 5-Member Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        {/* 6-Member Team Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -86,15 +85,9 @@ export default function TheCollective() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="flex flex-col group"
             >
-              {/* Photo Box with solid borders and grayscale filter */}
-              <div className="relative aspect-square w-full mb-6 overflow-hidden border border-white/10 group-hover:border-primary/40 transition-colors duration-300">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 20vw"
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-500"
-                />
+              {/* Photo Box with solid borders and User placeholder icon */}
+              <div className="relative aspect-square w-full mb-6 overflow-hidden border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-primary/40 transition-colors duration-300">
+                <User className="w-16 h-16 text-white/30 group-hover:text-primary transition-colors duration-500" />
                 
                 {/* Micro amber overlay on hover */}
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -107,13 +100,13 @@ export default function TheCollective() {
                     rel="noopener noreferrer"
                     className="absolute bottom-4 right-4 z-10 p-2 bg-black/60 border border-white/10 hover:border-primary hover:text-primary text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-none"
                   >
-                    <LinkedInIcon />
+                     <LinkedInIcon />
                   </a>
                 )}
               </div>
 
               {/* Name */}
-              <h3 className="font-display font-bold text-lg md:text-xl text-white tracking-tight leading-snug mb-1.5 group-hover:text-primary transition-colors">
+              <h3 className="font-display font-bold text-lg text-white tracking-tight leading-snug mb-1.5 group-hover:text-primary transition-colors">
                 {member.name}
               </h3>
 
