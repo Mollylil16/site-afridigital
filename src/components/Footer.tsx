@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+const basePath = process.env.NODE_ENV === "production" ? "/site-afridigital" : "";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -22,7 +24,7 @@ export default function Footer() {
           <a href="#" className="flex items-center gap-3 mb-6 group">
             <div className="relative w-8 h-8">
               <Image
-                src="/images/afridigital logo3.1 (5).png"
+                src={`${basePath}/images/afridigital_logo.png`}
                 alt="AfriDigital Logo"
                 fill
                 className="object-contain"

@@ -5,6 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/site-afridigital" : "";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -72,7 +74,7 @@ export default function Navbar() {
           <a href="#" className="flex items-center gap-3 group">
             <div className="relative w-8 h-8 md:w-10 md:h-10">
               <Image
-                src="/images/afridigital logo3.1 (5).png"
+                src={`${basePath}/images/afridigital_logo.png`}
                 alt="AfriDigital Logo"
                 fill
                 className="object-contain"

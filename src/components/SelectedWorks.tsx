@@ -15,6 +15,8 @@ interface Project {
   isPrivate: boolean;
 }
 
+const basePath = process.env.NODE_ENV === "production" ? "/site-afridigital" : "";
+
 export default function SelectedWorks() {
   const [activePrivateProject, setActivePrivateProject] = useState<Project | null>(null);
 
@@ -33,9 +35,9 @@ export default function SelectedWorks() {
       category: "PLATEFORME",
       title: "MEDISTAND AFRICA",
       image: "/images/medistand_mockup.webp",
-      link: "https://medistandafrica.com",
+      link: "#",
       span: "md:col-span-1",
-      isPrivate: false,
+      isPrivate: true,
     },
     {
       num: "003/API",
@@ -149,7 +151,7 @@ export default function SelectedWorks() {
                 {/* Grayscale Project Image */}
                 <div className="absolute inset-0 bg-[#000000] z-0">
                   <Image
-                    src={project.image}
+                    src={`${basePath}${project.image}`}
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
