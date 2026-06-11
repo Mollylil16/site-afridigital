@@ -3,30 +3,39 @@
 import { motion } from "framer-motion";
 
 export default function AfricaFingerprint() {
-  // Accurate geographic silhouette path of Africa
+  // Geographically accurate silhouette path of the African continent
   const africaPath = `
-    M 150 40 
-    C 190 35, 240 45, 260 65 
-    C 275 80, 295 100, 285 125 
-    C 275 145, 245 195, 225 235 
-    C 205 275, 190 310, 180 340 
-    C 175 340, 170 310, 160 285 
-    C 150 260, 140 240, 125 225 
-    C 115 215, 100 205, 90 195 
-    C 75 180, 50 170, 45 140 
-    C 40 100, 70 65, 100 50 
-    C 115 42, 130 42, 150 40 
+    M 100 40 
+    C 130 35, 160 30, 190 30 
+    C 210 30, 225 40, 235 45 
+    C 245 42, 260 55, 275 60
+    C 290 65, 305 70, 310 80
+    C 300 95, 290 110, 295 125
+    C 305 135, 320 145, 330 160
+    C 338 170, 342 185, 335 195
+    C 325 205, 315 220, 305 235
+    C 290 255, 275 285, 255 315
+    C 240 335, 225 355, 205 370
+    C 198 375, 190 380, 185 380
+    C 180 380, 175 365, 172 350
+    C 165 320, 158 290, 150 260
+    C 145 245, 135 235, 120 228
+    C 105 220, 90 215, 75 210
+    C 55 205, 35 195, 25 175
+    C 15 155, 12 135, 18 115
+    C 22 95, 35 80, 50 70
+    C 65 60, 80 50, 100 40
     Z
   `;
 
-  // Concentric ellipses for fingerprint ripples
+  // Concentric ellipses for fingerprint ripples aligned with the new center
   const fingerprintRings = [
-    { rx: 20, ry: 25, cx: 180, cy: 150, duration: 3 },
-    { rx: 35, ry: 45, cx: 180, cy: 155, duration: 4 },
-    { rx: 50, ry: 65, cx: 180, cy: 160, duration: 5 },
-    { rx: 65, ry: 85, cx: 180, cy: 165, duration: 6 },
-    { rx: 80, ry: 105, cx: 180, cy: 170, duration: 7 },
-    { rx: 95, ry: 125, cx: 180, cy: 175, duration: 8 },
+    { rx: 20, ry: 25, cx: 175, cy: 165, duration: 3 },
+    { rx: 35, ry: 45, cx: 175, cy: 170, duration: 4 },
+    { rx: 50, ry: 65, cx: 175, cy: 175, duration: 5 },
+    { rx: 65, ry: 85, cx: 175, cy: 180, duration: 6 },
+    { rx: 80, ry: 105, cx: 175, cy: 185, duration: 7 },
+    { rx: 95, ry: 125, cx: 175, cy: 190, duration: 8 },
   ];
 
   return (
@@ -110,8 +119,8 @@ export default function AfricaFingerprint() {
 
           {/* Glowing pulse ripples radiating from center */}
           <motion.ellipse
-            cx="180"
-            cy="150"
+            cx="175"
+            cy="165"
             rx="10"
             ry="12"
             stroke="#F5A623"
